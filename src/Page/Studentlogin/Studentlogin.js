@@ -1,16 +1,15 @@
 import React from 'react'
-import "./Loginpage.css"
+import "./Studentlogin.css"
 import { Link, useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik';
-import axios from "axios"
+import axios from 'axios';
 
-const Loginpage = () => {
+const Studentlogin = () => {
   const navigate = useNavigate()
-
   const formik = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+   email: '',
+   password: ""
     },
     onSubmit: async(values) => {
       try {
@@ -24,7 +23,6 @@ const Loginpage = () => {
       } catch (error) {
         console.log(error)
       }
-      
     },
   });
 
@@ -33,30 +31,28 @@ const Loginpage = () => {
     <div className='box'>
         <h1>Student Website</h1>
         <h4>Login your Account</h4>
-        <form  onSubmit={formik.handleSubmit}>
+        <form onSubmit={formik.handleSubmit}>
         <div className='inputref'>
-        
           <label>Enter your email : </label>
-        <input type="email"          onChange={formik.handleChange} name="email"
-         value={formik.values.firstName}  />
+        <input type="email"   onChange={formik.handleChange}  name="email"
+         value={formik.values.name} />
         </div>
         <div className='inputref'>
           <label>Enter your Password : </label>
-        <input type="password"          onChange={formik.handleChange} name="password"
-         value={formik.values.firstName}  />
+        <input type="password"  onChange={formik.handleChange}  name="password"
+         value={formik.values.password} />
         </div>
         <div className='buttongrop'>
         <button type='submit' className='clientbutton'> Login</button>
-        
-        <Link to="/clientsignup">
+        <Link to="/studentsignup">
         <button type='submit' className='clientbutton'> Sign Up</button>
         </Link>
      
         </div>
- </form>
+  </form>
     </div>
 </div>
   )
 }
 
-export default Loginpage
+export default Studentlogin

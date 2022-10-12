@@ -6,13 +6,14 @@ const Homepage = () => {
   return (
     <div className='container'>
         <div className='box'>
-            <h1>Freelance Website</h1>
+            <h1>Student Website</h1>
             <div className='buttonref'>
                 <Link to="/clientlogin">
-                <button className='clientbutton'>Client</button>
+                <button className='clientbutton'>Teacher</button>
                 </Link>
-
-               <button  className='clientbutton'>Freelance</button>
+              <Link to="/studentlogin">
+               <button  className='clientbutton'>Student</button>
+               </Link>
             </div>
         </div>
     </div>
